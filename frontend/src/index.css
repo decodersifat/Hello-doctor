@@ -1,0 +1,19 @@
+
+@font-face {
+  font-family: 'Rockybilly';
+  src: url('./assets/font/Rockybilly.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'Doto';
+    src: url('./assets/font/Doto_Rounded.ttf')
+}
+
+
+@import "tailwindcss";
+
+
+@theme{
+    --font-rocky:Rockybilly, 'cursive';
+    --font-doto:Doto;
+}
