@@ -14,7 +14,7 @@ function SignUp() {
 
   const [error, setError] = useState(null);
   const [message, setMessage] = useState('');
-  const API = 'http://localhost:3000/api/signup';
+  const API = 'http://localhost:3000/api/v1/auth/signup';
 
   const dataSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +29,9 @@ function SignUp() {
     };
 
     try {
-      await axios.post(API, userModel);
+      await axios.post(API, userModel, {
+  withCredentials: true
+});
       setMessage('✅ Account created successfully!');
       setUser({
         fname: '',

@@ -11,7 +11,7 @@ function Login() {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
-  const API = 'http://localhost:3000/api/login'; // Adjust as per your backend route
+  const API = 'http://localhost:3000/api/v1/auth/signin'; 
 
   const handleChange = (e) => {
     setFormData({
@@ -24,11 +24,12 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(API, formData);
+      const res = await axios.post(API, formData, {
+  withCredentials: true
+});
       setMessage('✅ Login successful!');
       setError('');
-      // You can save token or redirect here
-      // localStorage.setItem("token", res.data.token);
+   
     } catch (err) {
       setError('❌ Invalid email or password.');
       setMessage('');
