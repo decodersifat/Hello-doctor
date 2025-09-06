@@ -1,0 +1,9 @@
+django
+nibabel
+tensorflow
+keras
+reportlab
+scikit-learn 
+numpy
+scipy
+matplotlib
